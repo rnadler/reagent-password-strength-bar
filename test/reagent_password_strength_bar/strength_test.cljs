@@ -35,6 +35,7 @@
 
 (deftest test-variation-count
   (testing "Variation count"
+    (is (= (s/variation-count nil) 0))
     (is (= (s/variation-count "") 0))
     (is (= (s/variation-count "sddddDDD") 2))
     (is (= (s/variation-count "sddddDDD3") 3))

@@ -57,10 +57,12 @@
 (defn variation-count
   "Return number of string variations"
   [password]
-  (reduce
-    (fn [v re] (if (re-find re password) (+ v 1) v))
+  (if (nil? password)
     0
-    variations))
+    (reduce
+      (fn [v re] (if (re-find re password) (+ v 1) v))
+      0
+      variations)))
 
 (defn count-accum
   "Award every unique letter until 5 repetitions"

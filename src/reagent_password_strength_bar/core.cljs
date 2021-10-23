@@ -37,10 +37,11 @@
    })
 
 (defn password-strength-bar
+  "Password strength bar component"
   [password]
   (let [strength (s/password-strength @password)]
     [:div {:class (password-strength-meter-class)}
-     [:small @s/default-bar-label]
+     [:small s/default-bar-label]
      [:progress {:max s/max-strength
                  :value strength
                  :class [(password-strength-meter-progress)

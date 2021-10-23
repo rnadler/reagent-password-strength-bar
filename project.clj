@@ -33,9 +33,11 @@
                            ;; in the default browser once Figwheel has
                            ;; started and compiled your application.
                            ;; Comment this out once it no longer serves you.
-                           :open-urls ["http://localhost:3449/index.html"]}
+                           :open-urls ["http://localhost:3449/index.html"]
+                           :on-jsload "reagent-password-strength-bar.app/run"}
 
-                :compiler {:main reagent-password-strength-bar.core
+                :compiler {:main reagent-password-strength-bar.app
+                           :optimizations :none
                            :asset-path "js/compiled/out"
                            :output-to "resources/public/js/compiled/reagent_password_strength_bar.js"
                            :output-dir "resources/public/js/compiled/out"
