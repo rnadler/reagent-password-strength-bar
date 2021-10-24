@@ -25,10 +25,6 @@
    ;;   &::-moz-progress-bar bar-style
    })
 
-(defstyles password-strength-meter-label
-  []
-  {:font-size "14px"})
-
 (defstyles strength-bar-color
   [strength]
   {& {:background-color (s/strength-to-color strength)}  ;; IE
@@ -41,12 +37,10 @@
   [password]
   (let [strength (s/password-strength @password)]
     [:div {:class (password-strength-meter-class)}
-     [:small s/default-bar-label]
-     [:progress {:max s/max-strength
+     [:small (str s/default-bar-label " ")]
+     [:progress {:max (- s/max-strength 1)
                  :value strength
                  :class [(password-strength-meter-progress)
                          (strength-bar-color (- strength 1))] }]
-     [:br]
-     [:small {:class (password-strength-meter-label)}
-       (s/strength-to-label strength) ]
+     [:small (str " " (s/strength-to-label strength))]
    ]))
