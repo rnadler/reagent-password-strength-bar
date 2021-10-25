@@ -16,10 +16,10 @@
   {:-webkit-appearance "none"
    ;;:-moz-appearance "none"
    :appearance "none"
-   :width  s/default-width
+   :width  @s/width
    :height "8px"
    &::-webkit-progress-bar
-   {:background-color s/default-base-color
+   {:background-color @s/base-color
     :border-radius  "3px" }
    &::-webkit-progress-value bar-style
    ;;   &::-moz-progress-bar bar-style
@@ -34,13 +34,25 @@
 
 (defn password-strength-bar
   "Password strength bar component"
-  [password]
-  (let [strength (s/password-strength @password)]
-    [:div {:class (password-strength-meter-class)}
-     [:small (str s/default-bar-label " ")]
-     [:progress {:max (- s/max-strength 1)
-                 :value strength
-                 :class [(password-strength-meter-progress)
-                         (strength-bar-color (- strength 1))] }]
-     [:small (str " " (s/strength-to-label strength))]
-   ]))
+  [password & {:keys [bar-label strength-labels colors thresholds base-color width]
+               :or {bar-label s/default-bar-label
+                    strength-labels s/default-strength-labels
+                    colors s/default-colors
+                    thresholds s/default-thresholds
+                    base-color s/default-base-color
+                    width s/default-width}}]
+  (reset! s/bar-label bar-label)
+  (reset! s/strength-labels strength-labels)
+  (reset! s/colors colors)
+  (reset! s/thresholds thresholds)
+  (reset! s/base-color base-color)
+  (reset! s/width width)
+  (fn []
+    (let [strength (s/password-strength @password)]
+      [:div {:class (password-strength-meter-class)}
+       [:small (str @s/bar-label " ")]
+       [:progress {:max (- s/max-strength 1)
+                   :value strength
+                   :class [(password-strength-meter-progress)
+                           (strength-bar-color (- strength 1))] }]
+       [:small (str " " (s/strength-to-label strength))]])))

@@ -3,15 +3,17 @@
 (def max-strength 5)
 (def default-base-color  "#DDD")
 (def default-bar-label "Password strength:")
+(def default-colors [ "#F00" "#F90" "#FF0" "#9F0" "#0F0"])
 (def default-strength-labels ["(Useless)" "(Weak)" "(Normal)" "(Strong)" "(Great!)"])
 (def default-width "300px")
 (def default-thresholds  [90, 70, 40, 20])
-(def colors
-  {:strength-0 "#F00"
-   :strength-1 "#F90"
-   :strength-2 "#FF0"
-   :strength-3 "#9F0"
-   :strength-4 "#0F0"})
+
+(def bar-label (atom default-bar-label))
+(def strength-labels (atom default-strength-labels))
+(def colors (atom default-colors))
+(def thresholds (atom default-thresholds))
+(def base-color (atom default-base-color))
+(def width (atom default-width))
 
 (defn valid-strength
   "Make a strength value valid"
@@ -23,17 +25,17 @@
 (defn strength-to-color
   "Get the color for a strength value"
   [strength]
-  (colors (keyword (str "strength-" (valid-strength strength)))))
+  (nth @colors (valid-strength strength)))
 
 (defn strength-to-label
   "Get the color for a strength value"
   [strength]
-  (default-strength-labels (valid-strength strength)))
+  (@strength-labels (valid-strength strength)))
 
 (defn get-threshold
   "Get the nth threshold"
   [i]
-  (nth default-thresholds i))
+  (nth @thresholds i))
 
 (defn get-strength
   "Get strength and color for a score"
