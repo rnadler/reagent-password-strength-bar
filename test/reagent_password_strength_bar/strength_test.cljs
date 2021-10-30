@@ -65,3 +65,17 @@
     (is (= (s/password-strength "JfAAE%FC@r6&ARbM") 4))
     ))
 
+(defn test-options
+  [options bar-label]
+  (reset! s/bar-label "XXX")
+  (s/set-options options)
+  (is (= @s/bar-label bar-label))
+  )
+
+(deftest test-set-options
+  (testing "Set options"
+    (test-options '({:bar-label "PW Strength:"}) "PW Strength:")
+    (test-options '(nil) s/default-bar-label)
+    (test-options '() s/default-bar-label)
+    (test-options '({}) s/default-bar-label))
+    )

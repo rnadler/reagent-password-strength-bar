@@ -5,7 +5,7 @@
 (def default-bar-label "Password strength:")
 (def default-colors [ "#F00" "#F90" "#FF0" "#9F0" "#0F0"])
 (def default-strength-labels ["(Useless)" "(Weak)" "(Normal)" "(Strong)" "(Great!)"])
-(def default-width "300px")
+(def default-bar-width "300px")
 (def default-thresholds  [90, 70, 40, 20])
 
 (def bar-label (atom default-bar-label))
@@ -13,7 +13,26 @@
 (def colors (atom default-colors))
 (def thresholds (atom default-thresholds))
 (def base-color (atom default-base-color))
-(def width (atom default-width))
+(def bar-width (atom default-bar-width))
+
+(defn set-options
+  "Set user options"
+  [options]
+  (let [{bar-label-o :bar-label strength-labels-o :strength-labels colors-o :colors
+          thresholds-o :thresholds base-color-o :base-color bar-width-o :bar-width
+         :or {bar-label-o default-bar-label
+              strength-labels-o default-strength-labels
+              colors-o default-colors
+              thresholds-o default-thresholds
+              base-color-o default-base-color
+              bar-width-o default-bar-width}
+         } (first options)]
+    (reset! bar-label bar-label-o)
+    (reset! strength-labels strength-labels-o)
+    (reset! colors colors-o)
+    (reset! thresholds thresholds-o)
+    (reset! base-color base-color-o)
+    (reset! bar-width bar-width-o)))
 
 (defn valid-strength
   "Make a strength value valid"

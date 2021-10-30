@@ -16,7 +16,7 @@
   {:-webkit-appearance "none"
    ;;:-moz-appearance "none"
    :appearance "none"
-   :width  @s/width
+   :width  @s/bar-width
    :height "8px"
    &::-webkit-progress-bar
    {:background-color @s/base-color
@@ -33,20 +33,9 @@
    })
 
 (defn password-strength-bar
-  "Password strength bar component"
-  [password & {:keys [bar-label strength-labels colors thresholds base-color width]
-               :or {bar-label s/default-bar-label
-                    strength-labels s/default-strength-labels
-                    colors s/default-colors
-                    thresholds s/default-thresholds
-                    base-color s/default-base-color
-                    width s/default-width}}]
-  (reset! s/bar-label bar-label)
-  (reset! s/strength-labels strength-labels)
-  (reset! s/colors colors)
-  (reset! s/thresholds thresholds)
-  (reset! s/base-color base-color)
-  (reset! s/width width)
+  "Password strength bar component with optional options"
+  [password & options]
+  (s/set-options options)
   (fn []
     (let [strength (s/password-strength @password)]
       [:div {:class (password-strength-meter-class)}
