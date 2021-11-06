@@ -1,7 +1,6 @@
 # reagent-password-strength-bar
 
-[![Build Status](https://travis-ci.org/rnadler/reagent-password-strength-bar.svg?branch=master)](https://travis-ci.org/rnadler/reagent-password-strength-bar)
-[![npm version](https://badge.fury.io/js/reagent-password-strength-bar.svg)](https://badge.fury.io/js/reagent-password-strength-bar)
+[![CircleCI](https://circleci.com/gh/rnadler/reagent-password-strength-bar/tree/master.svg?style=svg)](https://circleci.com/gh/rnadler/reagent-password-strength-bar/tree/master)
 
 This a ClojureScript implementation of [ng9-password-strength-bar](https://www.npmjs.com/package/ng9-password-strength-bar).
 
