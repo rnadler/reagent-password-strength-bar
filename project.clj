@@ -7,8 +7,8 @@
   :min-lein-version "2.9.1"
 
   :dependencies [[org.clojure/clojure "1.10.3"]
-                 [org.clojure/clojurescript "1.10.879"]
-                 [org.clojure/core.async  "1.3.622"]
+                 [org.clojure/clojurescript "1.10.891"]
+                 [org.clojure/core.async  "1.4.627"]
                  [reagent "1.1.0"]
                  [reagent-utils "0.3.4"]
                  [cljsjs/react "17.0.2-0"]

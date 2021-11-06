@@ -1,0 +1,3 @@
+language: clojure
+script:
+  - lein doo node test once

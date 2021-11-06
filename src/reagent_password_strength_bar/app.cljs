@@ -24,11 +24,10 @@
      [:label "Password"]
      [input-element password]
      [password-strength-bar password
-      ;; Options map. This map and all options are optional.
       {:bar-label "PW Strength:"
        :strength-labels ["(Yuk)" "(Aweful)" "(OK)" "(Above Average)" "(Marvolous!)"]
-       :colors ["#DD2C00", "#FF6D00", "#FFD600", "#AEEA00", "#00C853"]
-       :thresholds  [90, 75, 45, 25]
+       :colors ["#DD2C00" "#FF6D00" "#FFD600" "#AEEA00" "#00C853"]
+       :thresholds [90 75 45 25]
        :base-color "#BBB"
        :bar-width "325px" }
       ]]))
