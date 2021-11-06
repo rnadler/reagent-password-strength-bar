@@ -17,7 +17,7 @@ jobs:
       # Specify service dependencies here if necessary
       # CircleCI maintains a library of pre-built images
       # documented at https://circleci.com/docs/2.0/circleci-images/
-      - image: cimg/node:17.0.1 
+      # - image: cimg/node:17.0.1 
 
     working_directory: ~/repo
 
@@ -30,7 +30,7 @@ jobs:
     # See: https://circleci.com/docs/2.0/configuration-reference/#steps
     steps:
       - checkout
-
+      - run: sudo apt-get install -y nodejs
       # Download and cache dependencies
       - restore_cache:
           keys:
