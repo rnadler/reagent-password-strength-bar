@@ -4,7 +4,7 @@
 
 This a ClojureScript implementation of [ng9-password-strength-bar](https://www.npmjs.com/package/ng9-password-strength-bar).
 
-![password-strength](/screenshots/password-strength.png)
+<img src="https://github.com/rnadler/reagent-password-strength-bar/blob/cfcbf3cd344e78d083f5c0209a77a3468d028c52/screenshots/password-strength.png" width=50% height=50%>
 
 [![Clojars Project](http://clojars.org/reagent-password-strength-bar/latest-version.svg)](https://clojars.org/reagent-password-strength-bar)
 
