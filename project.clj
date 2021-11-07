@@ -15,6 +15,9 @@
                  [cljsjs/react-dom "17.0.2-0"]
                  [clj-commons/cljss "1.6.4"]]
 
+  :repositories [["releases" {:url "https://repo.clojars.org"
+                              :sign-releases false}]]
+
   :plugins [[lein-figwheel "0.5.20"]
             [lein-cljsbuild "1.1.8" :exclusions [[org.clojure/clojure]]]
             [lein-doo "0.1.11"]]

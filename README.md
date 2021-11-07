@@ -2,7 +2,10 @@
 
 [![CircleCI](https://circleci.com/gh/rnadler/reagent-password-strength-bar/tree/master.svg?style=svg&circle-token=38758155a957a5be81431c19884b499b218d4d2d)](https://circleci.com/gh/rnadler/reagent-password-strength-bar/tree/master)
 
+
 This a ClojureScript implementation of [ng9-password-strength-bar](https://www.npmjs.com/package/ng9-password-strength-bar).
+
+![Screenshot](https://github.com/rnadler/reagent-password-strength-bar/screenshots/password-strength.png)
 
 [![Clojars Project](http://clojars.org/reagent-password-strength-bar/latest-version.svg)](https://clojars.org/reagent-password-strength-bar)
 
