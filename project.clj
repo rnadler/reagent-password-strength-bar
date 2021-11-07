@@ -1,4 +1,4 @@
-(defproject reagent-password-strength-bar "1.0.0"
+(defproject com.github.rnadler/reagent-password-strength-bar "1.0.0"
   :description "Reagent Password Strength Bar"
   :url "https://github.com/rnadler/reagent-password-strength-bar"
   :license {:name "Eclipse Public License"

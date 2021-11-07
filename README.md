@@ -1,6 +1,6 @@
 # reagent-password-strength-bar
 
-[![CircleCI](https://circleci.com/gh/rnadler/reagent-password-strength-bar/tree/master.svg?style=svg)](https://circleci.com/gh/rnadler/reagent-password-strength-bar/tree/master)
+[![CircleCI](https://circleci.com/gh/rnadler/reagent-password-strength-bar/tree/master.svg?style=svg&circle-token=38758155a957a5be81431c19884b499b218d4d2d)](https://circleci.com/gh/rnadler/reagent-password-strength-bar/tree/master)
 
 This a ClojureScript implementation of [ng9-password-strength-bar](https://www.npmjs.com/package/ng9-password-strength-bar).
 
@@ -17,6 +17,15 @@ This a ClojureScript implementation of [ng9-password-strength-bar](https://www.n
 
 ## Using the Component
 ### Add Component to your Application
+
+- Add namespace :require dependency:
+
+``` clojure
+[reagent-password-strength-bar.core :refer [password-strength-bar]]
+```
+
+- Application use. See [app.cljs](https://github.com/rnadler/reagent-password-strength-bar/blob/master/src/reagent_password_strength_bar/app.cljs).
+
 ```clojure
 (defn password-form
   "The password input element and strength bar"

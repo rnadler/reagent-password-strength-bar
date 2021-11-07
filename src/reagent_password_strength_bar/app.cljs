@@ -2,8 +2,7 @@
   (:require
    [reagent.core :as reagent :refer [atom]]
    [reagent.dom :as rdom]
-   [reagent-password-strength-bar.core :refer [password-strength-bar]]
-   [reagent-password-strength-bar.strength :as s]))
+   [reagent-password-strength-bar.core :refer [password-strength-bar]]))
 
 (defn input-element
   "The password input element which updates its value"
